@@ -16,12 +16,12 @@ app.get('/senators/:state',
 );
 
 function findRepresentativesByState(req, res, next) {
-  const url = `http://whoismyrepresentative.com/getall_reps_bystate.php?state=${req.params.state}&output=json`;
+  const url = `https://whoismyrepresentative.com/getall_reps_bystate.php?state=${req.params.state}&output=json`;
   request(url, handleApiResponse(res, next));
 }
 
 function findSenatorsByState(req, res, next) {
-  const url = `http://whoismyrepresentative.com/getall_sens_bystate.php?state=${req.params.state}&output=json`;
+  const url = `https://whoismyrepresentative.com/getall_sens_bystate.php?state=${req.params.state}&output=json`;
   request(url, handleApiResponse(res, next));
 }
 
@@ -46,7 +46,7 @@ function jsonResponse(req, res, next) {
   return res.json(res.locals);
 }
 
-const server = app.listen(3000, () => {
+const server = app.listen(3030, () => {
   const host = server.address().address,
     port = server.address().port;
 
